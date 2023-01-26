@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .myComment {
+            color: #ccc;
+        }
+
+        .titleBox {
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg);
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .titleBox h1 {
+            color: white;
+        }
+
+        .titleBox button {
+            color: white;
+            border-color: white;
+            background-color: transparent;
+            height: 60px;
+            border-radius: 50px;
+            width: 250px;
+            margin-top: 20px;
+        }
+
+        .titleBox button:hover {
+            border: 2px solid white;
+            cursor: pointer
+        }
+
+        .myCards {
+            width: 1200px;
+            margin: 50px auto 0 auto;
+
+        }
+
+        .myPost {
+            width: 500px;
+            margin: 20px auto 20px auto;
+            padding: 20px;
+            box-shadow: 0 0 3px 0 rgb(119, 119, 119);
+            text-align: center;
+        }
+
+        .myPost>button {
+            margin-top: 20px;
+            margin-right: 5px;
+        }
+
+        .myBtn {
+            margin-top: 20px;
+        }
+
+        .myPost .input-group {
+            margin-top: 20px;
+        }
+
+        .myPost .input-group button {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .myPost .form-control.txtArea {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="titleBox">
+        <h1>내 생애 최고의 영화들</h1>
+        <button onclick="hey()">영화 기록하기</button>
+    </div>
+    <div class="myPost">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">영화 URL</label>
+        </div>
+        <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary" type="button">별점</button>
+            <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+                <option selected>--선택하기--</option>
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <opion value="4">⭐⭐⭐⭐</opion>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control txtArea" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">코멘트</label>
+        </div>
+
+        <div class="myBtn">
+            <button type="button" class="btn btn-dark">기록하기</button>
+            <button type="button" class="btn btn-outline-dark">닫기</button>
+        </div>
+    </div>
+    <div class="myCards">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">영화 제목</h5>
+                        <p class="card-text">코멘트</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="myComment">나의 의견</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">영화 제목</h5>
+                        <p class="card-text">코멘트</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="myComment">나의 의견</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">영화 제목</h5>
+                        <p class="card-text">코멘트</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="myComment">나의 의견</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">영화 제목</h5>
+                        <p class="card-text">코멘트</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="myComment">나의 의견</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function hey() {
+            alert("안녕하세요?")
+        }
+    </script>
+</body>
+
+</html>

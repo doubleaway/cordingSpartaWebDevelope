@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>로그인페이지</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .contentBox {
+            margin: 0 auto;
+            margin-top: 20px;
+            width: 300px;
+        }
+
+        .contentBox p {
+            margin-bottom: 5px;
+        }
+
+        .titleBox {
+            background-color: aliceblue;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            background-image: url(https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg);
+            background-position: center;
+            background-size: cover;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .submitBtn {
+            background-color: #df3e3ed1;
+            color: #fff;
+            border-color: #eee;
+            font-size: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            width: 100%;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .content {
+            color: #333;
+        }
+
+        .content span {
+            width: 40px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .content input {
+            width: 255px;
+            height: 35px;
+            border-radius: 8px;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contentBox">
+        <div class="titleBox">
+            <h1>로그인 페이지</h1>
+            <h5>아이디, 비밀번호를 입력하세요!</h5>
+        </div>
+
+        <p class="content"><span>ID:</span><input type="text" /></p>
+        <p class="content"><span>PW:</span><input type="password" /></p>
+        <button class="submitBtn">로그인하기</button>
+    </div>
+
+</body>
+
+</html>
