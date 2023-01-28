@@ -98,6 +98,7 @@
 <body>
     <div class="titleBox">
         <h1>내 생애 최고의 영화들</h1>
+        <div>현재 서울의 날씨 : <span id="temp">20</span>도</div>
         <button onclick="hey()">영화 기록하기</button>
     </div>
     <div class="myPost">
@@ -182,6 +183,12 @@
         function hey() {
             alert("안녕하세요?")
         }
+
+        $(document).ready(function () {
+            fetch("http://spartacodingclub.shop/sparta_api/weather/seoul").then(res => res.json()).then(data => {
+                console.log(data)
+            })
+        })
     </script>
 </body>
 
