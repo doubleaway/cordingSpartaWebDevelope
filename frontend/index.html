@@ -92,13 +92,21 @@
         .myPost .form-control.txtArea {
             height: 100px;
         }
+
+        .tempBox {
+            color: aliceblue
+        }
+
+        .cold {
+            color: #1278AA;
+        }
     </style>
 </head>
 
 <body>
     <div class="titleBox">
         <h1>내 생애 최고의 영화들</h1>
-        <div>현재 서울의 날씨 : <span id="temp">20</span>도</div>
+        <div class="tempBox">현재 서울의 날씨 : <span id="temp"><img src="" alt="날씨 아이콘" />20</span>도</div>
         <button onclick="hey()">영화 기록하기</button>
     </div>
     <div class="myPost">
@@ -183,10 +191,22 @@
         function hey() {
             alert("안녕하세요?")
         }
-
+        // 서울 기온 가져오기
         $(document).ready(function () {
             fetch("http://spartacodingclub.shop/sparta_api/weather/seoul").then(res => res.json()).then(data => {
-                console.log(data)
+                // 초기화
+                $('#temp').empty();
+                let { icon, temp } = data;
+                let ic = icon;
+                let temper = temp;
+                let temp_html = `<img src="${icon}" alt="날씨 아이콘"/> ${temper}`;
+                if (temp < 0) {
+                    $('#temp').addClass('cold');
+                }
+                $('#temp').html(temp_html)
+
+
+
             })
         })
     </script>
