@@ -136,7 +136,7 @@
         </div>
     </div>
     <div class="myCards">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div id="mvCon" class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col">
                 <div class="card">
                     <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
@@ -191,8 +191,9 @@
         function hey() {
             alert("안녕하세요?")
         }
-        // 서울 기온 가져오기
+
         $(document).ready(function () {
+            // 서울 기온 가져오기
             fetch("http://spartacodingclub.shop/sparta_api/weather/seoul").then(res => res.json()).then(data => {
                 // 초기화
                 $('#temp').empty();
@@ -203,11 +204,54 @@
                 if (temp < 0) {
                     $('#temp').addClass('cold');
                 }
-                $('#temp').html(temp_html)
 
+
+                $('#temp').html(temp_html)
+                listing();
+
+                function listing() {
+                    console.log('화면 로딩 후 잘 실행되었습니다');
+                }
+
+            })
+            //-- 서울 기온 가져오기
+
+            // 영화 정보 가져오기
+            fetch("http://spartacodingclub.shop/web/api/movie").then(res => res.json()).then(data => {
+                $('#mvCon').empty();
+                // 초기화
+                let rows = data['movies'];
+
+                rows.forEach((mv) => {
+                    let tit = mv['title'];
+                    let desc = mv['desc'];
+                    let comment = mv['comment'];
+                    let star = mv['star'];
+                    let image = mv['image'];
+                    let stars = '⭐'.repeat(star);
+                    console.log(tit);
+
+                    let temp_html = `
+                    <div class="col">
+                        <div class="card">
+                            <img src="${image}"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${tit}</h5>
+                                <p class="card-text">${comment}</p>
+                                <p>${stars}</p>
+                                <p class="myComment">${desc}</p>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                    $('#mvCon').append(temp_html);
+                });
 
 
             })
+            // --영화정보 가져오기
+
         })
     </script>
 </body>
