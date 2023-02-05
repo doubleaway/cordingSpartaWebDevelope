@@ -10,13 +10,13 @@ soup = BeautifulSoup(data.text, 'html.parser')
 # #old_content > table > tbody > tr:nth-child(2) > td:nth-child(1) > img
 trs = soup.select('#old_content > table > tbody > tr')
 for tr in trs:
-    title =  tr.select_one('td.title > div > a')
-    rank = tr.select_one('td:nth-child(1) > img')
-    point = tr.select_one('td.point')
+    a =  tr.select_one('td.title > div > a')
+
     if a is not None:
-        print(title)
-        print(rank[alt])
-        print(c.text)
+        title = a.text
+        rank = tr.select_one('td:nth-child(1) > img')['alt']
+        point = tr.select_one('td.point').text
+        print(title,rank,point)
 
 
 # 코딩 시작
