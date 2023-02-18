@@ -72,8 +72,10 @@
         });
         function set_temp() {
             fetch("http://spartacodingclub.shop/sparta_api/weather/seoul").then((res) => res.json()).then((data) => {
-                console.log(data)
+                let temp = data['temp']
+                $('#temp').text(temp)
             });
+
         }
         function save_comment() {
             let formData = new FormData();
