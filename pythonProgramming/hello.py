@@ -1,1 +1,6 @@
-print("hello sparta")
+a=2
+b=3
+c=True
+
+print(a/b)
+print(c)
